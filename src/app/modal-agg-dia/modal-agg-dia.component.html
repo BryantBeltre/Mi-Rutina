@@ -1,0 +1,55 @@
+<ion-header>
+<ion-toolbar>
+  <ion-title>Mi Dia</ion-title>
+  <ion-buttons slot="end">
+    <ion-button color="primary" (click)="cerrarM()">Listo</ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+  <ion-item>
+    <ion-label>Titulo: </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Descripcion: </ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+
+ 
+</ion-card>
+
+
+
+<ion-list>
+  <ion-item *ngFor="let img of imagenes">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="img.data"></ion-img>
+    </ion-thumbnail>
+
+    <ion-label class ="ion-text-wrap">{{img.nombre}}</ion-label>
+    
+    <ion-button slot="end" fill="clear" >
+      <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+    </ion-button>
+
+    <ion-button slot="end" fill="clear" >
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+
+  </ion-item>
+</ion-list>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="seleccionarImg()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+</ion-content>

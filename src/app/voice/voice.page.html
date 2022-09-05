@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><b> Narrar </b></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item button *ngFor="let f of archivograbado" (click)="reproducir(f)" detail="false" color="dark">
+        {{f}}
+        <ion-button slot="end" (click)="eliminarAudio(f)" fill="clear" color="danger">
+          <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+</ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row class="ion-aling-items-center">
+      <ion-col size="10">
+        <span *ngIf="!recording">
+          Presiona para grabar
+        </span>
+        <span *ngIf="recording">
+          {{ duracionDisplay }}
+        </span>
+      </ion-col>
+      <ion-col size="2">
+      <ion-button fill="clear" #recordbtn>
+        <ion-icon name="mic-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

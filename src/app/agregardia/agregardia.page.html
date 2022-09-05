@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Dia</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="cerrarM()">Listo</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  </ion-header>
+  
+  <ion-content>
+  
+  <ion-card>
+    <ion-item color="dark">
+      <ion-label>Titulo: </ion-label>
+      <ion-input [(ngModel)]="rutina.titulo"></ion-input>
+    </ion-item>
+  
+    <ion-item color="dark">
+      <ion-label>Descripcion: </ion-label>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-textarea [(ngModel)]="rutina.descripcion"></ion-textarea>
+    </ion-item>
+
+
+    <ion-item color="dark">
+      <ion-label>Fecha: </ion-label>
+      <ion-input [(ngModel)]="rutina.voice" type="datetime-local"></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label>Foto</ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <label for="file-upload">
+            <ion-icon slot="icon-only" name="images"></ion-icon>
+          </label>
+          <input (change)="newImg($event)" id="file-upload" style="display: none"  type="file" accept="image/*">
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-button color="dark" (click)="guardar()">Guardar</ion-button>
+  </ion-card>
+  
+  
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="seleccionarImg()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  
+  </ion-content>

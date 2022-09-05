@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crud-ionic-a3b21": {
+      "hosting": {
+        "app": [
+          "crud-ionic-a3b21"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crud-ionic-a3b21"
+  }
+}
